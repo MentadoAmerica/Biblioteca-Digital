@@ -50,24 +50,25 @@
                     <p class="text-sm text-slate-500 mt-1">Accede a tu cuenta de la biblioteca</p>
                 </div>
 
-                <form class="space-y-5">
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-2">
+                <form class="space-y-5" action="{{ route('login') }}" method="POST">
+                @csrf   
+                <div>
+                        <label for="email "class="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-2">
                             <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             Correo electrónico
                         </label>
-                        <input type="email" placeholder="usuario@ejemplo.com" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-700 placeholder-slate-400">
+                        <input type="email" name="email" placeholder="usuario@ejemplo.com" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-700 placeholder-slate-400">
                     </div>
 
                     <div>
                         <div class="flex justify-between items-center mb-1">
-                            <label class="text-sm font-medium text-slate-700 flex items-center gap-2">
+                            <label for="password" class="text-sm font-medium text-slate-700 flex items-center gap-2">
                                 <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                                 Contraseña
                             </label>
                             <a href="#" class="text-sm text-blue-600 hover:text-blue-800 hover:underline">¿Olvidaste tu contraseña?</a>
                         </div>
-                        <input type="password" placeholder="Introduce tu contraseña" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-700 placeholder-slate-400">
+                        <input type="password" name="password" placeholder="Introduce tu contraseña" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-700 placeholder-slate-400">
                     </div>
 
                     <div class="flex items-center">
