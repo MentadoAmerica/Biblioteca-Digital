@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BiblioDigital - Biblioteca Municipal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Instrument Sans', sans-serif; font-feature-settings: "cv02", "cv03", "cv04"; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased flex flex-col min-h-screen">
+
+<header class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2 group cursor-pointer">
+            <div class="bg-blue-600 p-2 rounded-lg transition-transform group-hover:scale-105">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+            </div>
+            <span class="text-xl font-bold tracking-tight text-slate-800">Biblio<span class="text-blue-600">Digital</span></span>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-10">
+            <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Recursos</a>
+            <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Instituciones</a>
+            <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Ayuda</a>
+            <a href="#" class="border border-blue-600 text-blue-600 px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-50 transition">Acceso Usuarios</a>
+        </div>
+
+        <button id="mobile-menu-button" class="md:hidden p-2 text-slate-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+    </nav>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-4">
+        <a href="#" class="block py-3 text-slate-600 font-medium">Inicio</a>
+        <a href="#" class="block py-3 text-blue-600 font-bold">Acceso Usuarios</a>
+    </div>
+</header>
+<main class="flex-grow py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+        
+        <div class="text-center mb-12">
+            <div class="mx-auto bg-blue-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Biblioteca Municipal</h1>
+            <p class="text-slate-500 text-lg">Accede a tu cuenta o regístrate para disfrutar de todos nuestros servicios</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-slate-800">Iniciar Sesión</h2>
+                    <p class="text-sm text-slate-500 mt-1">Accede a tu cuenta de la biblioteca</p>
+                </div>
+
+                <form class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-2">
+                            <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            Correo electrónico
+                        </label>
+                        <input type="email" placeholder="usuario@ejemplo.com" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-700 placeholder-slate-400">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="text-sm font-medium text-slate-700 flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                Contraseña
+                            </label>
+                            <a href="#" class="text-sm text-blue-600 hover:text-blue-800 hover:underline">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        <input type="password" placeholder="Introduce tu contraseña" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-700 placeholder-slate-400">
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember" class="w-4 h-4 text-blue-600 bg-slate-50 border-slate-300 rounded focus:ring-blue-500">
+                        <label for="remember" class="ml-2 text-sm text-slate-600">Recordar sesión</label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+                        Iniciar Sesión
+                    </button>
+                </form>
+
+                <div class="mt-8 relative">
+                    <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-slate-200"></div></div>
+                    <div class="relative flex justify-center text-sm"><span class="px-2 bg-white text-slate-500">O</span></div>
+                </div>
+
+                <div class="mt-6 flex gap-4">
+                    <button class="flex-1 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-medium py-2.5 px-4 rounded-lg transition-colors flex justify-center items-center gap-2 shadow-sm">
+                        <svg class="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.761H12.545z"/></svg>
+                        Google
+                    </button>
+                    <button class="flex-1 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-medium py-2.5 px-4 rounded-lg transition-colors flex justify-center items-center gap-2 shadow-sm">
+                        <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                        Facebook
+                    </button>
+                </div>
+
+                <p class="mt-8 text-sm text-slate-600">
+                    ¿No tienes una cuenta? <a href="#" class="text-blue-600 font-semibold hover:underline">Regístrate aquí</a>
+                </p>
+
+                <div class="mt-6 bg-blue-50/50 border border-blue-100 rounded-xl p-5">
+                    <h3 class="flex items-center gap-2 font-semibold text-blue-900 mb-2">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        ¿Primera vez en la biblioteca?
+                    </h3>
+                    <p class="text-sm text-blue-800 leading-relaxed">
+                        Si es tu primera visita, necesitarás registrarte para acceder a nuestros servicios de préstamo de libros, reservas y eventos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-slate-800">Crear Cuenta</h2>
+                    <p class="text-sm text-slate-500 mt-1">Regístrate para acceder a todos los servicios</p>
+                </div>
+
+                <form class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                Nombre
+                            </label>
+                            <input type="text" placeholder="Tu nombre" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-700 placeholder-slate-400">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                Apellido
+                            </label>
+                            <input type="text" placeholder="Tu apellido" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-700 placeholder-slate-400">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-2">
+                            <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            Correo electrónico
+                        </label>
+                        <input type="email" placeholder="usuario@ejemplo.com" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-700 placeholder-slate-400">
+                        <p class="text-xs text-slate-400 mt-1">Usaremos este email para contactarte</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                Contraseña
+                            </label>
+                            <input type="password" placeholder="Crea una contraseña" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-700 placeholder-slate-400">
+                            <p class="text-xs text-slate-400 mt-1">Mínimo 6 caracteres</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                Repetir Contraseña
+                            </label>
+                            <input type="password" placeholder="Repite tu contraseña" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-slate-700 placeholder-slate-400">
+                        </div>
+                    </div>
+
+                    <div class="flex items-start mt-6">
+                        <div class="flex items-center h-5">
+                            <input type="checkbox" id="terms" class="w-4 h-4 text-blue-600 bg-slate-50 border-slate-300 rounded focus:ring-blue-500 mt-0.5">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="terms" class="font-medium text-slate-600">
+                                Acepto los <a href="#" class="text-blue-600 hover:underline">términos y condiciones</a> y la política de privacidad de la Biblioteca Municipal. Confirmo que soy mayor de 14 años.
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex justify-center items-center gap-2 mt-4 shadow-md shadow-blue-500/20">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+                        Crear Cuenta
+                    </button>
+                </form>
+
+                <p class="mt-8 text-sm text-slate-600">
+                    ¿Ya tienes una cuenta? <a href="#" class="text-blue-600 font-semibold hover:underline">Inicia sesión aquí</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</main>
+<footer class="bg-slate-950 text-slate-400 py-20 border-t border-slate-900 mt-auto">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-16">
+            <div class="col-span-1 lg:col-span-1">
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="bg-blue-600 p-1.5 rounded text-white">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                    </div>
+                    <span class="text-white font-bold tracking-tight">BiblioDigital</span>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">Fomentando el avance intelectual mediante tecnología de vanguardia y bibliotecas digitales sostenibles.</p>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-semibold mb-6">Plataforma</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Catálogo Público</a></li>
+                    <li><a href="#" class="hover:text-white transition">Revistas Científicas</a></li>
+                    <li><a href="#" class="hover:text-white transition">Repositorios de Tesis</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-6">Institución</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Sobre Nosotros</a></li>
+                    <li><a href="#" class="hover:text-white transition">Términos de Servicio</a></li>
+                    <li><a href="#" class="hover:text-white transition">Privacidad</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-6">Suscripción</h4>
+                <div class="flex border border-slate-800 rounded-lg overflow-hidden">
+                    <input type="email" placeholder="Email" class="bg-slate-900 px-4 py-2 w-full text-sm focus:outline-none">
+                    <button class="bg-blue-600 px-4 text-white text-sm hover:bg-blue-700">Ir</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wide">
+            <p>&copy; 2026 BIBLIODIGITAL. SISTEMA DE GESTIÓN BIBLIOTECARIA.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white">TWITTER</a>
+                <a href="#" class="hover:text-white">LINKEDIN</a>
+                <a href="#" class="hover:text-white">RESEARCHGATE</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        const isOpen = !menu.classList.contains('hidden');
+        icon.setAttribute('d', isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
+    });
+</script>
+</body>
+</html>
