@@ -51,7 +51,7 @@
                 <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Recursos</a>
                 <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Instituciones</a>
                 <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Ayuda</a>
-                <a href="#" class="border border-blue-600 text-blue-600 px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-50 transition">Acceso Usuarios</a>
+                <a href="{{ route('login') }}" class="border border-blue-600 text-blue-600 px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-50 transition">Acceso Usuarios</a>
             </div>
 
             <button id="mobile-menu-button" class="md:hidden p-2 text-slate-600">
@@ -61,7 +61,7 @@
         
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-4">
             <a href="#" class="block py-3 text-slate-600 font-medium">Inicio</a>
-            <a href="#" class="block py-3 text-blue-600 font-bold">Acceso Usuarios</a>
+            <a href="{{ route('login') }} " class="block py-3 text-blue-600 font-bold">Acceso Usuarios</a>
         </div>
     </header>
 

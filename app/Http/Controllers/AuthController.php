@@ -10,4 +10,24 @@ class AuthController extends Controller
     {
         return view('auth.login');
     }
+
+    public function register()
+    {
+
+    $validatedData = request()->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users',
+        'password' => 'required|string|min:8|confirmed',
+        'password_confirmation' => 'required|string|min:8',
+    ]);
+
+    $user = \App\Models\User::create([
+         'name' =>  $validatedData['name'],
+         'email' => $validatedData['email'],
+         'password' => bcrypt($validatedData['password']),
+    ]);
+
+    auth()->login($user);
+    return redirect()->route('home');
+    }
 }
