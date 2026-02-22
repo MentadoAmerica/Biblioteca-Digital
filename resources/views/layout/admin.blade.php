@@ -41,7 +41,7 @@
             </div>
 
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="#" class="text-sm font-semibold text-blue-600 border-b-2 border-blue-600 pb-1">Inicio</a>
+                <a href="{{ route('home') }}" class="text-sm font-semibold text-blue-600 border-b-2 border-blue-600 pb-1">Inicio</a>
                 <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Usuarios</a>
                 <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Libros</a>
                 <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Préstamos</a>
@@ -70,7 +70,7 @@
                         <i class="fas fa-th-large mr-3 w-5 text-center"></i>
                         Dashboard
                     </a>
-                    <a href="#" class="flex items-center p-3 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 rounded-xl transition group">
+                    <a href="{{ route('home') }}" class="flex items-center p-3 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 rounded-xl transition group">
                         <i class="fas fa-book mr-3 w-5 text-center group-hover:text-blue-600"></i>
                         Inicio
                     </a>

@@ -35,8 +35,7 @@
                                     Editar
                                 </a>
 
-                                <form action="" method="POST" class="inline-block" onsubmit="return confirm('¿Estás seguro?')">
-                                    @csrf
+                      <form action="{{ route('categorias.destroy', $categoria->id) }}" method="POST" class="inline-block">                                    @csrf
                                     @method('DELETE')
                                     <button type="submit" class="bg-blue-800 hover:bg-black text-white font-bold py-1 px-3 rounded">
                                         Eliminar
