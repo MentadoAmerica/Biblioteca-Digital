@@ -74,9 +74,9 @@
     <div class="bg-white rounded-2xl shadow-sm border border-slate-200/60 overflow-hidden">
         <div class="p-6 border-b border-slate-100 flex justify-between items-center">
             <h2 class="text-lg font-bold text-slate-800">Lista de Libros</h2>
-            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition flex items-center shadow-md shadow-blue-600/20">
+            <a href="{{route('libros.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition flex items-center shadow-md shadow-blue-600/20">
                 <i class="fas fa-plus mr-2"></i> Agregar libro
-            </button>
+            </a>
         </div>
         
         <div class="overflow-x-auto">
@@ -92,12 +92,15 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100">
+                    @foreach($libros as $libro)
                     <tr class="hover:bg-slate-50 transition-colors">
-                        <td class="px-6 py-4 text-sm text-slate-700 font-medium">Cien años de soledad</td>
-                        <td class="px-6 py-4 text-sm text-slate-600">Gabriel García Márquez</td>
-                        <td class="px-6 py-4 text-sm text-slate-600 font-mono">978-0307474728</td>
+                        <td class="px-6 py-4 text-sm text-slate-700 font-medium">{{$libro->nombre}}</td>
+                        <td class="px-6 py-4 text-sm text-slate-600">{{$libro->autor}}</td>
+                        <td class="px-6 py-4 text-sm text-slate-600 font-mono">{{$libro->isbn}}</td>
                         <td class="px-6 py-4">
-                            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-600">Literatura</span>
+                          <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-600">
+                             {{ $libro->categoria->nombre }}
+                        </span>
                         </td>
                         <td class="px-6 py-4">
                             <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-600">Disponible</span>
@@ -109,23 +112,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr class="hover:bg-slate-50 transition-colors">
-                        <td class="px-6 py-4 text-sm text-slate-700 font-medium">1984</td>
-                        <td class="px-6 py-4 text-sm text-slate-600">George Orwell</td>
-                        <td class="px-6 py-4 text-sm text-slate-600 font-mono">978-0451524935</td>
-                        <td class="px-6 py-4">
-                            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-600">Ciencia Ficción</span>
-                        </td>
-                        <td class="px-6 py-4">
-                            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-rose-50 text-rose-600">Prestado</span>
-                        </td>
-                        <td class="px-6 py-4 text-sm">
-                            <div class="flex gap-3">
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Editar</a>
-                                <a href="#" class="text-rose-500 hover:text-rose-700 font-medium">Eliminar</a>
-                            </div>
-                        </td>
-                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
