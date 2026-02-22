@@ -78,7 +78,7 @@
                         <i class="fas fa-users mr-3 w-5 text-center group-hover:text-blue-600"></i>
                         Usuarios
                     </a>
-                    <a href="#" class="flex items-center p-3 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 rounded-xl transition group">
+                    <a href="{{ route('categorias.index') }}" class="flex items-center p-3 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 rounded-xl transition group">
                         <i class="fas fa-tags mr-3 w-5 text-center group-hover:text-blue-600"></i>
                         Categorias
                     </a>
@@ -94,7 +94,7 @@
                         <i class="fas fa-cog mr-3 w-5 text-center"></i>
                         Ajustes
                     </a>
-                    <a href="#" class="flex items-center p-3 text-sm font-semibold text-red-500 hover:bg-red-50 rounded-xl transition mt-10">
+                    <a href="{{ route('logout') }}" class="flex items-center p-3 text-sm font-semibold text-red-500 hover:bg-red-50 rounded-xl transition mt-10">
                         <i class="fas fa-sign-out-alt mr-3 w-5 text-center"></i>
                         Cerrar Sesión
                     </a>
