@@ -24,9 +24,12 @@ Route::middleware('auth')->group(function(){
     Route::post('/categorias/store', [CategoriasController::class, 'store'])->name('categorias.store');
     Route::get('/categorias/{id}/edit', [CategoriasController::class, 'edit'])->name('categorias.edit');
     Route::put('/categorias/{id}', [CategoriasController::class, 'update'])->name('categorias.update');
+    Route::delete('/categorias/{id}', [CategoriasController::class, 'destroy'])->name('categorias.destroy');
 
     Route::get('/libros/create', [LibrosController::class, 'create'])->name('libros.create');
     Route::post('/libros/store', [LibrosController::class, 'store'])->name('libros.store');
-    Route::delete('/categorias/{id}', [CategoriasController::class, 'destroy'])->name('categorias.destroy');
+    Route::get('/libros/{id}/edit', [LibrosController::class, 'edit'])->name('libros.edit');
+    Route::put('/libros/{id}', [LibrosController::class, 'update'])->name('libros.update');
+    Route::delete('/libros/{id}', [LibrosController::class, 'destroy'])->name('libros.destroy');
 
-});
+    });

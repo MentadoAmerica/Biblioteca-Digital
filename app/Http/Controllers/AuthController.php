@@ -25,7 +25,10 @@ class AuthController extends Controller
          'name' =>  $validatedData['name'],
          'email' => $validatedData['email'],
          'password' => bcrypt($validatedData['password']),
+         'username' => $validatedData['email'], // Asignar el email como username
+         'user_type' => 'user',
     ]);
+
 
     auth()->login($user);
     return redirect()->route('home');

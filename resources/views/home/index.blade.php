@@ -107,8 +107,12 @@
                         </td>
                         <td class="px-6 py-4 text-sm">
                             <div class="flex gap-3">
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Editar</a>
-                                <a href="#" class="text-rose-500 hover:text-rose-700 font-medium">Eliminar</a>
+                               <a href="{{ route('libros.edit',$libro->id) }}" class="text-blue-600 hover:text-blue-900 mr-3">Editar</a>
+                            <form action="{{ route('libros.destroy', $libro->id) }}" method="POST" class="inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-600 hover:text-red-900">Eliminar</button>
+                            </form>      
                             </div>
                         </td>
                     </tr>
@@ -117,13 +121,20 @@
             </table>
         </div>
         
-        <div class="p-4 border-t border-slate-100 bg-slate-50/30 flex justify-end">
+        <div class="px-6 py-4 border-t border-gray-200 bg-slate-50/30">
+        {{ $libros->links() }}
+    </div>
+        <!--div class="p-4 border-t border-slate-100 bg-slate-50/30 flex justify-end">
             <nav class="flex gap-2">
                 <button class="px-3 py-1 border border-slate-200 rounded-md text-sm hover:bg-white transition">Anterior</button>
                 <button class="px-3 py-1 bg-blue-600 text-white rounded-md text-sm">1</button>
                 <button class="px-3 py-1 border border-slate-200 rounded-md text-sm hover:bg-white transition">Siguiente</button>
             </nav>
         </div>
-    </div>
+
+         
+    </div><div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+            {{ $libros->links() }}
+        </div-->
 </main>
 @endsection

@@ -50,11 +50,11 @@
 
             <div class="flex items-center space-x-4">
                 <div class="hidden sm:flex flex-col text-right mr-2">
-                    <span class="text-sm font-bold text-slate-700 leading-tight">Admin Principal</span>
-                    <span class="text-xs text-slate-500">Administrador</span>
+                    <span class="text-sm font-bold text-slate-700 leading-tight">{{ auth()->user()->name }}</span>
+                    <span class="text-xs text-slate-500">Usuario</span>
                 </div>
                 <div class="w-10 h-10 bg-slate-200 rounded-full border-2 border-white shadow-sm overflow-hidden">
-                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=2563eb&color=fff" alt="Perfil">
+                    <img src="https://cdn-icons-png.flaticon.com/512/17552/17552541.png" alt="Perfil">
                 </div>
             </div>
         </div>
