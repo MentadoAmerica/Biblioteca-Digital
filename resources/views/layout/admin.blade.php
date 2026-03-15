@@ -81,7 +81,7 @@
                         <i class="fas fa-tags mr-3 w-5 text-center group-hover:text-blue-600"></i>
                         Categorias
                     </a>
-                     <a href="{{ route('prestamos.index') }}" class="sidebar-link flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                     <a href="{{ route('prestamos.index') }}" class="sidebar-link flex items-center p-3 rounded-lg hover:bg-slate-50 hover:text-blue-600 rounded-xl transition-colors">
                         <i class="fas fa-exchange-alt mr-3 w-5 text-center group-hover:text-blue-600"></i>
                         Préstamos
                     </a>
