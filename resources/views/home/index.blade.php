@@ -103,7 +103,11 @@
                         </span>
                         </td>
                         <td class="px-6 py-4">
-                            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-600">Disponible</span>
+                            @if($libro->estatus == 0)
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Disponible</span>
+                            @else
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Prestado</span>
+                            @endif
                         </td>
                         <td class="px-6 py-4 text-sm">
                             <div class="flex gap-3">
