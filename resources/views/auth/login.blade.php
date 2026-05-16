@@ -121,6 +121,15 @@
 
                 <form class="space-y-5" action="{{ route('register') }}" method="POST">
                 @csrf    
+                  @if ($errors->any())
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                             <label for="name" class="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-2">

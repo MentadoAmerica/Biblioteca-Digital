@@ -98,6 +98,19 @@
                         Cerrar Sesión
                     </a>
                 </nav>
+
+                <!-- Bloque de perfil de usuario agregado -->
+                <div class="p-4 border-t border-gray-700 mt-6">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
+                            <span class="font-bold text-white">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-medium"><a href="{{ route('usuarios.profile') }}">{{ auth()->user()->name }}</a></p>
+                            <p class="text-xs text-gray-400">{{ auth()->user()->email }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </aside>
 

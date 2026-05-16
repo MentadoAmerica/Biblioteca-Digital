@@ -14,60 +14,64 @@
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-sm font-medium text-slate-500">Total de libros</p>
-                    <h3 class="text-3xl font-bold text-slate-800 mt-1">1,247</h3>
+                    <h3 class="text-2xl font-bold mt-1">{{ $total_libros }}</h3>
                 </div>
                 <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl">
                     <i class="fas fa-book"></i>
                 </div>
             </div>
+            <!--
             <div class="mt-4 flex items-center text-xs text-emerald-600 font-bold">
                 <i class="fas fa-arrow-up mr-1"></i> 5.2% desde el mes pasado
             </div>
+            -->
         </div>
 
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 transition-all hover:shadow-md">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-sm font-medium text-slate-500">Libros prestados</p>
-                    <h3 class="text-3xl font-bold text-slate-800 mt-1">189</h3>
+                    <h3 class="text-2xl font-bold mt-1">{{ $libros_pestados }}</h3>
                 </div>
                 <div class="w-12 h-12 bg-amber-50 text-amber-500 rounded-xl flex items-center justify-center text-xl">
                     <i class="fas fa-exchange-alt"></i>
                 </div>
             </div>
+            <!--
             <div class="mt-4 flex items-center text-xs text-rose-500 font-bold">
                 <i class="fas fa-arrow-down mr-1"></i> 2.1% desde el mes pasado
-            </div>
+            </div-->
         </div>
 
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 transition-all hover:shadow-md">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-sm font-medium text-slate-500">Usuarios activos</p>
-                    <h3 class="text-3xl font-bold text-slate-800 mt-1">543</h3>
+                    <h3 class="text-3xl font-bold text-slate-800 mt-1">{{ $total_usuarios }}</h3>
                 </div>
                 <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl">
                     <i class="fas fa-users"></i>
                 </div>
             </div>
-            <div class="mt-4 flex items-center text-xs text-emerald-600 font-bold">
+            <!--<div class="mt-4 flex items-center text-xs text-emerald-600 font-bold">
                 <i class="fas fa-arrow-up mr-1"></i> 12.7% desde el mes pasado
             </div>
+-->
         </div>
 
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 transition-all hover:shadow-md">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-sm font-medium text-slate-500">Devoluciones pendientes</p>
-                    <h3 class="text-3xl font-bold text-slate-800 mt-1">24</h3>
+                    <h3 class="text-3xl font-bold text-slate-800 mt-1">{{ $devoluciones_pendientes }}</h3>
                 </div>
                 <div class="w-12 h-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center text-xl">
                     <i class="fas fa-clock"></i>
                 </div>
             </div>
-            <div class="mt-4 flex items-center text-xs text-rose-500 font-bold">
+            <!--div class="mt-4 flex items-center text-xs text-rose-500 font-bold">
                 <i class="fas fa-arrow-up mr-1"></i> 3.4% desde ayer
-            </div>
+            </div-->
         </div>
     </div>
 
